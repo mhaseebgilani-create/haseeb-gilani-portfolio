@@ -343,7 +343,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                   </button>
 
                   <p className="text-[11px] text-center text-[#929DA7]/60 pt-2">
-                    Strict privacy guaranteed. No marketing spam. Direct executive response.
+                    Direct executive communication. Your business details are held strictly confidential.
                   </p>
 
                 </form>

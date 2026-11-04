@@ -1,26 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { AboutSection } from './components/AboutSection';
-import { ExpertiseSection } from './components/ExpertiseSection';
-import { OutreachEvidenceSection } from './components/OutreachEvidenceSection';
-import { ProcessSection } from './components/ProcessSection';
-import { ExperienceSection } from './components/ExperienceSection';
-import { ToolsSection } from './components/ToolsSection';
-import { PortfolioSection } from './components/PortfolioSection';
-import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { AiVoiceAssistant } from './components/AiVoiceAssistant';
 import { CalendlyModal } from './components/CalendlyModal';
 import { FuturisticCursor } from './components/FuturisticCursor';
 
+import { HomePage } from './pages/HomePage';
+import { ServicePage } from './pages/ServicePage';
+import { InsightArticlePage } from './pages/InsightArticlePage';
+import { FaqHubPage } from './pages/FaqHubPage';
+
+import { DEDICATED_SERVICES, INSIGHT_ARTICLES } from './data/seoContentData';
+
 export default function App() {
+  const [currentPath, setCurrentPath] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const p = window.location.pathname;
+      return p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p;
+    }
+    return '/';
+  });
+
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [selectedServiceForInquiry, setSelectedServiceForInquiry] = useState<string>('');
-  
-  // Mouse position for subtle industrial lighting aura
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
 
+  // Listen for browser forward/back buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const p = window.location.pathname;
+      const cleanPath = p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p;
+      setCurrentPath(cleanPath);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Mouse ambient aura tracker
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
@@ -30,32 +47,89 @@ export default function App() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Seamless client router navigation handler
+  const navigateTo = (targetPath: string) => {
+    let cleanPath = targetPath;
+    let targetHash = '';
+
+    if (targetPath.includes('#')) {
+      const parts = targetPath.split('#');
+      cleanPath = parts[0] || '/';
+      targetHash = parts[1];
+    }
+
+    if (cleanPath.length > 1 && cleanPath.endsWith('/')) {
+      cleanPath = cleanPath.slice(0, -1);
+    }
+
+    if (typeof window !== 'undefined') {
+      window.history.pushState({}, '', targetPath);
+      setCurrentPath(cleanPath || '/');
+
+      if (targetHash) {
+        setTimeout(() => {
+          const el = document.getElementById(targetHash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 80);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+      }
+    }
+  };
+
   const handleSelectService = (serviceName: string) => {
     setSelectedServiceForInquiry(serviceName);
-    const contactEl = document.getElementById('contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigateTo('/#contact');
   };
 
-  const handleExploreWorld = () => {
-    const aboutEl = document.getElementById('about');
-    if (aboutEl) {
-      aboutEl.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // Route matching
+  let renderedPage = (
+    <HomePage
+      onOpenCalendly={() => setIsCalendlyOpen(true)}
+      onSelectService={handleSelectService}
+      selectedService={selectedServiceForInquiry}
+    />
+  );
 
-  const handleConnect = () => {
-    const contactEl = document.getElementById('contact');
-    if (contactEl) {
-      contactEl.scrollIntoView({ behavior: 'smooth' });
+  if (currentPath === '/faq') {
+    renderedPage = (
+      <FaqHubPage
+        onNavigate={navigateTo}
+        onOpenCalendly={() => setIsCalendlyOpen(true)}
+      />
+    );
+  } else if (currentPath.startsWith('/services/')) {
+    const slug = currentPath.replace('/services/', '');
+    const serviceData = DEDICATED_SERVICES.find(s => s.slug === slug || s.url === currentPath);
+    if (serviceData) {
+      renderedPage = (
+        <ServicePage
+          data={serviceData}
+          onOpenCalendly={() => setIsCalendlyOpen(true)}
+          onNavigate={navigateTo}
+        />
+      );
     }
-  };
+  } else if (currentPath.startsWith('/insights/')) {
+    const slug = currentPath.replace('/insights/', '');
+    const articleData = INSIGHT_ARTICLES.find(a => a.slug === slug || a.url === currentPath);
+    if (articleData) {
+      renderedPage = (
+        <InsightArticlePage
+          data={articleData}
+          onNavigate={navigateTo}
+          onOpenCalendly={() => setIsCalendlyOpen(true)}
+        />
+      );
+    }
+  }
 
   return (
     <div className="relative min-h-screen bg-[#17191C] text-[#F4F4F2] selection:bg-[#FF4B32] selection:text-white font-sans antialiased overflow-x-hidden">
       
-      {/* Futuristic Custom Mouse Pointer Reticle */}
+      {/* Zero-Latency Hardware-Speed Futuristic Cyber Pointer */}
       <FuturisticCursor />
 
       {/* Subtle Desktop Mouse Follow Light Aura */}
@@ -67,55 +141,30 @@ export default function App() {
         aria-hidden="true"
       />
 
-      {/* Top Bar Navigation */}
-      <Navbar onOpenCalendly={() => setIsCalendlyOpen(true)} />
+      {/* Primary Top Bar Navigation */}
+      <Navbar 
+        currentPath={currentPath}
+        onNavigate={navigateTo}
+        onOpenCalendly={() => setIsCalendlyOpen(true)} 
+      />
 
-      {/* Main Page Flow */}
-      <main>
-        {/* Hero Section */}
-        <Hero
-          onExploreWorld={handleExploreWorld}
-          onConnect={handleConnect}
-        />
-
-        {/* About Section */}
-        <AboutSection onOpenCalendly={() => setIsCalendlyOpen(true)} />
-
-        {/* Specialized Capabilities / Expertise */}
-        <ExpertiseSection
-          onSelectService={handleSelectService}
-          onOpenCalendly={() => setIsCalendlyOpen(true)}
-        />
-
-        {/* Authentic Outreach Evidence & Client Acquisition Chats */}
-        <OutreachEvidenceSection />
-
-        {/* 4-Step Personal Brand Process Pipeline & 6-Stage Sales Funnel */}
-        <ProcessSection />
-
-        {/* Professional Experience Interactive Timeline */}
-        <ExperienceSection />
-
-        {/* Tools & Technology Ecosystem with Real Brand SVGs */}
-        <ToolsSection />
-
-        {/* Case Studies & Portfolio */}
-        <PortfolioSection />
-
-        {/* Contact & Meeting Booking */}
-        <ContactSection
-          initialService={selectedServiceForInquiry}
-          onOpenCalendlyModal={() => setIsCalendlyOpen(true)}
-        />
+      {/* Main Routed Page Content */}
+      <main id="main-content">
+        {renderedPage}
       </main>
 
-      {/* Footer */}
-      <Footer onOpenCalendly={() => setIsCalendlyOpen(true)} />
+      {/* Comprehensive Footer with SEO Internal Linking */}
+      <Footer 
+        onNavigate={navigateTo}
+        onOpenCalendly={() => setIsCalendlyOpen(true)} 
+      />
 
-      {/* Interactive AI Voice Welcome Assistant (Bottom Left with Speaking Avatar) */}
-      <AiVoiceAssistant onExploreWorld={handleExploreWorld} />
+      {/* Speaking AI Voice Assistant (Bottom-Left Holographic Dock) */}
+      <AiVoiceAssistant 
+        onExploreWorld={() => navigateTo('/#about')} 
+      />
 
-      {/* Calendly Interactive Booking Modal */}
+      {/* Interactive Calendly Discovery Call Modal */}
       <CalendlyModal
         isOpen={isCalendlyOpen}
         onClose={() => setIsCalendlyOpen(false)}

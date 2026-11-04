@@ -90,10 +90,10 @@ export const PERSONAL_INFO = {
     relevance: "Combining data science precision, algorithmic prospecting models, and lead qualification analytics."
   },
   stats: [
-    { label: "Verified Leads Curated", value: "150K+", subtext: "Hand-verified ICP decision makers" },
-    { label: "Qualified Pipeline Built", value: "$4.2M+", subtext: "Contract value generated" },
-    { label: "Average Campaign Open Rate", value: "48%", subtext: "Targeted cold email campaigns" },
-    { label: "Confirmed Meetings Booked", value: "850+", subtext: "From direct outbound outreach" }
+    { label: "Core Competencies", value: "10 Disciplines", subtext: "From ICP research to closed contracts" },
+    { label: "Outreach Channels", value: "Multi-Touch", subtext: "LinkedIn, Cold Email, Upwork & CRM" },
+    { label: "Data Quality Focus", value: "Triple-Layer", subtext: "Hand-verified SMTP & MX validation" },
+    { label: "Core Philosophy", value: "Value-First", subtext: "Starting the right conversations" }
   ]
 };
 
@@ -386,7 +386,7 @@ export const REAL_OUTREACH_EVIDENCE: OutreachEvidenceItem[] = [
       { sender: "prospect", text: "What timezone are you in? I could do a call maybe midday UK time on the 5th.", timestamp: "10:12 PM" },
       { sender: "haseeb", text: "Great, here's our calendar to find an aligned time: PR Strategy Call", timestamp: "10:13 PM" }
     ],
-    keyTakeaway: "Instant 60-second reply turnaround with timezone-adaptive calendar links guarantees zero drop-off."
+    keyTakeaway: "Prompt reply turnaround with timezone-adaptive calendar links minimizes prospect drop-off."
   },
   {
     id: "ev-4",
@@ -485,10 +485,10 @@ export const SERVICES: ServiceItem[] = [
     deliverables: [
       "Custom CSV/CRM list with verified corporate emails & phone numbers",
       "Deep ICP qualification rubrics and trigger event mapping",
-      "Zero-bounce domain verification report"
+      "SMTP-verified clean contact list report"
     ],
     toolsUsed: ["Apollo.io", "LinkedIn Sales Navigator", "Hunter.io", "Google Sheets"],
-    impactMetric: "98% Email Deliverability Guarantee"
+    impactMetric: "Triple-Layer Verification Focus"
   },
   {
     id: "linkedin-outreach",
@@ -509,7 +509,7 @@ export const SERVICES: ServiceItem[] = [
       "Direct calendar booking into your sales schedule"
     ],
     toolsUsed: ["LinkedIn Sales Navigator", "Calendly", "HubSpot"],
-    impactMetric: "35%+ Connection Acceptance Rate"
+    impactMetric: "Conversational Soft-Pitch Approach"
   },
   {
     id: "cold-email-marketing",
@@ -530,7 +530,7 @@ export const SERVICES: ServiceItem[] = [
       "Daily response sorting and warm lead handoffs"
     ],
     toolsUsed: ["Snov.io", "Hunter.io", "Google Workspace"],
-    impactMetric: "45–60% Consistent Open Rates"
+    impactMetric: "Deliverability-First DNS Architecture"
   },
   {
     id: "business-development",
@@ -551,7 +551,7 @@ export const SERVICES: ServiceItem[] = [
       "Bi-weekly pipeline velocity analysis"
     ],
     toolsUsed: ["HubSpot CRM", "GoHighLevel", "Excel", "Google Sheets"],
-    impactMetric: "2.4x Faster Discovery-to-Close Velocity"
+    impactMetric: "End-to-End Pipeline Structuring"
   },
   {
     id: "ecommerce-solutions",
@@ -572,7 +572,7 @@ export const SERVICES: ServiceItem[] = [
       "Post-purchase upsell and abandoned cart integrations"
     ],
     toolsUsed: ["Shopify Plus", "Google Sheets", "Excel"],
-    impactMetric: "+28% Average Checkout Conversion"
+    impactMetric: "Turnkey Architecture & Mobile UX"
   },
   {
     id: "digital-marketing",
@@ -593,7 +593,7 @@ export const SERVICES: ServiceItem[] = [
       "Comprehensive performance and attribution reporting"
     ],
     toolsUsed: ["GoHighLevel", "Google Workspace", "HubSpot"],
-    impactMetric: "3.2x Return on Outreach Investment"
+    impactMetric: "Multi-Channel Outbound Framework"
   }
 ];
 
@@ -670,12 +670,12 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       "Executive Discovery Scheduling"
     ],
     keyResults: [
-      { label: "Executive Meetings Booked", value: "64 Calls" },
-      { label: "Target Account Reply Rate", value: "22.8%" },
-      { label: "New Pipeline Created", value: "$840,000" }
+      { label: "Targeting Accuracy", value: "Verified ICP Tier 1" },
+      { label: "Contact Validation", value: "SMTP Checked" },
+      { label: "Outbound Pipeline", value: "Executive Focus" }
     ],
-    timeline: "60-Day Sprint",
-    quote: "Haseeb restructured our entire outbound workflow. We went from zero outbound pipeline to back-to-back discovery calls with enterprise technology leaders.",
+    timeline: "Targeted Outbound Sprint",
+    quote: "Haseeb restructured our entire outbound workflow, focusing on genuine problem-solving rather than generic pitch slaps.",
     imageUrl: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
     mockupBadge: "APOLLO.IO + SALES NAV PIPELINE"
   },
@@ -694,12 +694,12 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       "Direct Calendar Coordination"
     ],
     keyResults: [
-      { label: "Connection Acceptance Rate", value: "39.4%" },
-      { label: "Qualified Discovery Meetings", value: "48 Qualified" },
-      { label: "Contract Value Realized", value: "$320,000" }
+      { label: "Outreach Approach", value: "1-on-1 Personalized" },
+      { label: "Search Precision", value: "Boolean Filters" },
+      { label: "Calendar Handoff", value: "Qualified Decision Makers" }
     ],
-    timeline: "90-Day Campaign",
-    quote: "The personalized touch Haseeb applied completely differentiated our brand from automated spammers. Our meetings were with actual decision-makers who were genuinely intrigued.",
+    timeline: "Campaign Execution",
+    quote: "The personalized touch Haseeb applied completely differentiated our brand from automated spammers. Conversations were relevant and productive.",
     imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
     mockupBadge: "LINKEDIN INMAIL ARCHITECTURE"
   },
@@ -710,22 +710,22 @@ export const CASE_STUDIES: CaseStudyItem[] = [
     categoryLabel: "Cold Email Campaigns",
     clientIndustry: "Management & Strategic Advisory Firm",
     challenge: "Primary corporate domain had experienced deliverability degradation. Outbound efforts were landing in junk folders, resulting in missed quarterly acquisition goals.",
-    solution: "Engineered a resilient infrastructure of 4 secondary domains with dedicated IP warm-up protocols, SPF/DKIM/DMARC certification, and rigorous real-time bounce validation.",
+    solution: "Engineered a resilient infrastructure of secondary domains with dedicated warm-up protocols, SPF/DKIM/DMARC certification, and rigorous real-time bounce validation.",
     servicesProvided: [
       "Domain & DNS Hardening",
-      "Automated Inbox Warm-up (30 Days)",
-      "Strict Bounce Scrubbing (<1%)",
+      "Automated Inbox Warm-up Protocols",
+      "Strict Bounce Scrubbing",
       "Deliverability Health Monitoring"
     ],
     keyResults: [
-      { label: "Inbox Placement Rate", value: "99.2%" },
-      { label: "Sustained Open Rate", value: "54.7%" },
-      { label: "Consultation Calls Scheduled", value: "92 Sessions" }
+      { label: "DNS Hardening", value: "SPF, DKIM & DMARC" },
+      { label: "Domain Protection", value: "Primary Domain Isolated" },
+      { label: "Deliverability Health", value: "Active Monitoring" }
     ],
-    timeline: "Ongoing 120-Day System",
-    quote: "Deliverability was our bottleneck. Haseeb solved the technical plumbing and wrote copy that actually prompted thoughtful replies from corporate leadership.",
+    timeline: "Infrastructure & Outbound System",
+    quote: "Haseeb solved our deliverability bottleneck and wrote copy that prompted thoughtful replies from corporate leadership.",
     imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
-    mockupBadge: "SPF/DKIM/DMARC 99.2% INBOX"
+    mockupBadge: "SPF/DKIM/DMARC INBOX SETUP"
   },
   {
     id: "cs-4",
@@ -742,12 +742,12 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       "Automated Recovery Sequence Setup"
     ],
     keyResults: [
-      { label: "Store Conversion Rate Lift", value: "+32.5%" },
-      { label: "Abandoned Cart Recovery", value: "14.2%" },
-      { label: "Mobile Page Load Speed", value: "1.2s" }
+      { label: "Store Architecture", value: "Turnkey Shopify" },
+      { label: "Mobile Experience", value: "Frictionless UX" },
+      { label: "Catalog Organization", value: "Structured Taxonomy" }
     ],
-    timeline: "45 Days",
-    quote: "Our new store not only looks world-class, but our conversion rate jumped significantly within the first two weeks of launch.",
+    timeline: "Store Launch & Optimization",
+    quote: "Our new store looks clean, loads fast on mobile, and the product taxonomy makes ordering effortless.",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
     mockupBadge: "SHOPIFY CONVERSION ENGINE"
   },
@@ -766,11 +766,11 @@ export const CASE_STUDIES: CaseStudyItem[] = [
       "Bi-Weekly Strategy Sprints"
     ],
     keyResults: [
-      { label: "Predictable Monthly Inbound", value: "18-24 Deals" },
-      { label: "Average Deal Size Growth", value: "+40%" },
-      { label: "Pipeline Predictability", value: "95% Accuracy" }
+      { label: "Pipeline Structure", value: "HubSpot / GHL SOPs" },
+      { label: "Lead Qualification", value: "Standardized Rubric" },
+      { label: "Outbound Predictability", value: "Multi-Touch Cadence" }
     ],
-    timeline: "6 Months Retainer",
+    timeline: "Strategic Retainer",
     quote: "Haseeb gave our business development structure, predictability, and relentless execution discipline.",
     imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80",
     mockupBadge: "HUBSPOT CRM REVENUE ARCHITECTURE"

@@ -1,28 +1,63 @@
 import React from 'react';
-import { ArrowUp, Mail, MapPin, FileText, Download } from 'lucide-react';
+import { ArrowUp, Mail, MapPin, FileText, Download, ChevronRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { RealLinkedInIcon, RealCalendlyIcon } from './RealBrandIcons';
-
 import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
+  onNavigate?: (path: string) => void;
   onOpenCalendly?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenCalendly }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCalendly }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleLinkClick = (e: React.MouseEvent, path: string) => {
+    if (path.startsWith('/#')) {
+      if (window.location.pathname === '/') {
+        e.preventDefault();
+        const targetId = path.replace('/#', '');
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate(path);
+    }
+  };
+
+  const services = [
+    { name: 'B2B Lead Generation', path: '/services/b2b-lead-generation' },
+    { name: 'Business Development', path: '/services/business-development' },
+    { name: 'LinkedIn Outreach Specialist', path: '/services/linkedin-outreach' },
+    { name: 'Cold Email Marketing', path: '/services/cold-email-marketing' },
+    { name: 'B2B Appointment Setting', path: '/services/appointment-setting' },
+    { name: 'Shopify & E-Commerce Growth', path: '/services/ecommerce-growth' },
+  ];
+
+  const knowledgeLinks = [
+    { name: 'B2B Prospecting Workflow Guide', path: '/insights/b2b-prospecting-workflow' },
+    { name: 'Cold Email Deliverability Guide', path: '/insights/cold-email-deliverability' },
+    { name: 'Outbound Sales FAQ Knowledge Base', path: '/faq' },
+    { name: 'Verified Outreach Evidence', path: '/#evidence' },
+    { name: '6-Stage Acquisition Funnel', path: '/#process' },
+    { name: 'Career Timeline & Experience', path: '/#experience' },
+  ];
 
   return (
     <footer className="relative bg-[#121416] border-t border-[#929DA7]/15 py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#929DA7]/15">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#929DA7]/15">
           
-          {/* Brand Info */}
-          <div className="md:col-span-5 space-y-4">
+          {/* Brand Info & Identity */}
+          <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <BrandLogo size={36} />
               <span className="font-display font-extrabold text-lg tracking-tight text-[#F4F4F2]">
@@ -31,10 +66,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCalendly }) => {
             </div>
             
             <p className="text-xs sm:text-sm text-[#929DA7] leading-relaxed max-w-sm">
-              Business Development Manager, B2B Sales &amp; Client Acquisition Specialist, and Data Science Practitioner in Lahore, Punjab, Pakistan.
+              Business Development Manager, B2B Lead Generation Specialist, and Data Science Practitioner based in Lahore, Punjab, Pakistan.
             </p>
 
-            <div className="text-xs font-mono text-[#929DA7] italic border-l-2 border-[#FF4B32] pl-3">
+            <div className="text-xs font-mono text-[#929DA7] italic border-l-2 border-[#FF4B32] pl-3 py-1">
               "{PERSONAL_INFO.quote}"
             </div>
 
@@ -44,27 +79,52 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCalendly }) => {
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-[#FF4B32]">
-              Navigation
+          {/* Dedicated Services Landing Pages */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-[#FF4B32] font-bold">
+              Specialized Services
             </h4>
             <ul className="space-y-2 text-xs font-medium text-[#929DA7]">
-              <li><a href="#home" className="hover:text-[#F4F4F2] transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-[#F4F4F2] transition-colors">About &amp; Core Skills</a></li>
-              <li><a href="#expertise" className="hover:text-[#F4F4F2] transition-colors">Capabilities &amp; Services</a></li>
-              <li><a href="#evidence" className="hover:text-[#F4F4F2] transition-colors text-[#FF4B32] font-semibold">Outreach Evidence</a></li>
-              <li><a href="#process" className="hover:text-[#F4F4F2] transition-colors">6-Stage Funnel</a></li>
-              <li><a href="#experience" className="hover:text-[#F4F4F2] transition-colors">Career Timeline</a></li>
-              <li><a href="#tools" className="hover:text-[#F4F4F2] transition-colors">Tools &amp; Platforms</a></li>
-              <li><a href="#portfolio" className="hover:text-[#F4F4F2] transition-colors">Case Studies</a></li>
+              {services.map((item, idx) => (
+                <li key={idx}>
+                  <a
+                    href={item.path}
+                    onClick={(e) => handleLinkClick(e, item.path)}
+                    className="hover:text-[#F4F4F2] transition-colors flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <ChevronRight className="w-3 h-3 text-[#FF4B32]/70" />
+                    <span>{item.name}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Direct Actions & PDF Download */}
-          <div className="md:col-span-4 space-y-4">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-[#FF4B32]">
-              Direct Engagement
+          {/* Guides & FAQs */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-[#FF4B32] font-bold">
+              Insights &amp; FAQs
+            </h4>
+            <ul className="space-y-2 text-xs font-medium text-[#929DA7]">
+              {knowledgeLinks.map((item, idx) => (
+                <li key={idx}>
+                  <a
+                    href={item.path}
+                    onClick={(e) => handleLinkClick(e, item.path)}
+                    className="hover:text-[#F4F4F2] transition-colors flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <ChevronRight className="w-3 h-3 text-[#FF4B32]/70" />
+                    <span>{item.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Direct Actions & Credentials */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-[#FF4B32] font-bold">
+              Connect Directly
             </h4>
             <p className="text-xs text-[#929DA7] leading-relaxed">
               Available for B2B client acquisition contracts, sales pipeline architecture, and executive outreach retainers.
@@ -81,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCalendly }) => {
                     onOpenCalendly();
                   }
                 }}
-                className="w-full py-2.5 px-4 rounded-xl bg-[#FF4B32] hover:bg-[#e03a22] text-white text-xs font-mono font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md shadow-[#FF4B32]/25"
+                className="w-full py-2.5 px-4 rounded-xl bg-[#FF4B32] hover:bg-[#e03a22] text-white text-xs font-mono font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md shadow-[#FF4B32]/25 cursor-pointer"
               >
                 <RealCalendlyIcon className="w-4 h-4" />
                 <span>Schedule a 30-Min Call</span>
@@ -107,7 +167,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCalendly }) => {
                 </a>
               </div>
 
-              {/* PDF Download Action in Footer */}
+              {/* PDF Download */}
               <a
                 href={PERSONAL_INFO.portfolioPdfUrl}
                 target="_blank"
@@ -127,7 +187,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenCalendly }) => {
         {/* Bottom Bar: Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#929DA7]">
           <div>
-            © {new Date().getFullYear()} Haseeb Gilani · The Islamia University of Bahawalpur (Data Science)
+            © {new Date().getFullYear()} Haseeb Gilani · The Islamia University of Bahawalpur (Data Science) · Lahore, Pakistan
           </div>
           <div className="flex items-center gap-6">
             <span>B2B Client Acquisition &amp; Pipeline Architecture</span>
