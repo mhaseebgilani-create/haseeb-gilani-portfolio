@@ -12,6 +12,8 @@ import { FaqHubPage } from './pages/FaqHubPage';
 
 import { DEDICATED_SERVICES, INSIGHT_ARTICLES } from './data/seoContentData';
 
+import { AmbientMouseAura } from './components/AmbientMouseAura';
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     if (typeof window !== 'undefined') {
@@ -23,7 +25,6 @@ export default function App() {
 
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [selectedServiceForInquiry, setSelectedServiceForInquiry] = useState<string>('');
-  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
 
   // Listen for browser forward/back buttons
   useEffect(() => {
@@ -31,20 +32,17 @@ export default function App() {
       const p = window.location.pathname;
       const cleanPath = p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p;
       setCurrentPath(cleanPath);
+      if (window.location.hash) {
+        const id = window.location.hash.slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     };
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  // Mouse ambient aura tracker
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   // Seamless client router navigation handler
@@ -132,14 +130,8 @@ export default function App() {
       {/* Zero-Latency Hardware-Speed Futuristic Cyber Pointer */}
       <FuturisticCursor />
 
-      {/* Subtle Desktop Mouse Follow Light Aura */}
-      <div
-        className="hidden md:block pointer-events-none fixed w-[500px] h-[500px] rounded-full blur-[130px] opacity-15 bg-[#FF4B32] z-30 transition-transform duration-75 ease-out"
-        style={{
-          transform: `translate(${mousePos.x - 250}px, ${mousePos.y - 250}px)`,
-        }}
-        aria-hidden="true"
-      />
+      {/* Subtle Desktop Mouse Follow Light Aura (Zero React Re-renders) */}
+      <AmbientMouseAura />
 
       {/* Primary Top Bar Navigation */}
       <Navbar 

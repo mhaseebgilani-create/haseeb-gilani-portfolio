@@ -19,6 +19,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogImage = '/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png',
   schemaJson,
 }) => {
+  const serializedKeywords = keywords.join(', ');
+  const serializedSchema = schemaJson ? JSON.stringify(schemaJson) : '';
+
   useEffect(() => {
     // 1. Update Title
     document.title = title;
@@ -36,8 +39,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
     // 2. Standard Meta Tags
     setMetaTag('name', 'description', description);
-    if (keywords.length > 0) {
-      setMetaTag('name', 'keywords', keywords.join(', '));
+    if (serializedKeywords.length > 0) {
+      setMetaTag('name', 'keywords', serializedKeywords);
     }
 
     // 3. Canonical Link Tag
@@ -64,21 +67,18 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     // 6. Dynamic JSON-LD Structured Data
     const scriptId = 'dynamic-seo-schema';
     let scriptEl = document.getElementById(scriptId) as HTMLScriptElement | null;
-    if (schemaJson) {
+    if (serializedSchema) {
       if (!scriptEl) {
         scriptEl = document.createElement('script');
         scriptEl.id = scriptId;
         scriptEl.type = 'application/ld+json';
         document.head.appendChild(scriptEl);
       }
-      scriptEl.textContent = JSON.stringify(schemaJson, null, 2);
+      scriptEl.textContent = serializedSchema;
     } else if (scriptEl) {
       scriptEl.remove();
     }
-
-    // Scroll to top on route change
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-  }, [title, description, canonicalUrl, keywords, ogType, ogImage, schemaJson]);
+  }, [title, description, canonicalUrl, serializedKeywords, ogType, ogImage, serializedSchema]);
 
   return null;
 };

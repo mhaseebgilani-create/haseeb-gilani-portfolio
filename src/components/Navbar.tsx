@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'B2B Lead Generation', path: '/services/b2b-lead-generation', desc: 'Verified lists & data mining' },
     { name: 'Business Development', path: '/services/business-development', desc: 'Sales pipeline architecture' },
     { name: 'LinkedIn Outreach', path: '/services/linkedin-outreach', desc: '1-on-1 executive social selling' },
-    { name: 'Cold Email Marketing', path: '/services/cold-email-marketing', desc: '99% inbox deliverability' },
+    { name: 'Cold Email Marketing', path: '/services/cold-email-marketing', desc: 'High inbox deliverability' },
     { name: 'B2B Appointment Setting', path: '/services/appointment-setting', desc: 'Confirmed discovery meetings' },
     { name: 'Shopify & E-Commerce', path: '/services/ecommerce-growth', desc: 'Store UX & wholesale pipelines' },
   ];
