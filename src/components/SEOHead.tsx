@@ -16,7 +16,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   canonicalUrl,
   keywords = [],
   ogType = 'website',
-  ogImage = '/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png',
+  ogImage = 'https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png',
   schemaJson,
 }) => {
   const serializedKeywords = keywords.join(', ');
@@ -58,11 +58,17 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     setMetaTag('property', 'og:url', canonicalUrl);
     setMetaTag('property', 'og:type', ogType);
     setMetaTag('property', 'og:image', ogImage);
+    setMetaTag('property', 'og:image:secure_url', ogImage);
+    setMetaTag('property', 'og:image:type', 'image/png');
+    setMetaTag('property', 'og:image:width', '1000');
+    setMetaTag('property', 'og:image:height', '1000');
+    setMetaTag('property', 'og:image:alt', `${title} - Haseeb Gilani (Haseeb Gillani)`);
 
     // 5. Twitter Card Tags
     setMetaTag('name', 'twitter:title', title);
     setMetaTag('name', 'twitter:description', description);
     setMetaTag('name', 'twitter:image', ogImage);
+    setMetaTag('name', 'twitter:image:alt', `${title} - Haseeb Gilani (Haseeb Gillani)`);
 
     // 6. Dynamic JSON-LD Structured Data
     const scriptId = 'dynamic-seo-schema';

@@ -1,33 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>Haseeb Gilani - Business Development Manager and B2B Lead Generation Specialist</image:title>
+      <image:caption>Executive portrait of Haseeb Gilani (alternate spelling Haseeb Gillani), Business Development Manager and B2B Lead Generation Specialist in Lahore, Pakistan.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-ai-guide-avatar.jpg</image:loc>
+      <image:title>AI Voice Guide Virtual Assistant Avatar</image:title>
+      <image:caption>Interactive virtual assistant guide avatar for Haseeb Gilani's B2B growth and lead generation portfolio.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/services/b2b-lead-generation</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>B2B Lead Generation Services - Haseeb Gilani</image:title>
+      <image:caption>B2B lead generation, prospect list research, and verified outreach by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/services/business-development</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>Strategic Business Development Services - Haseeb Gilani</image:title>
+      <image:caption>End-to-end sales pipeline development and market expansion by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/services/linkedin-outreach</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>LinkedIn Outreach &amp; Prospecting Services - Haseeb Gilani</image:title>
+      <image:caption>Targeted LinkedIn Sales Navigator outreach and connection strategies by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/services/cold-email-marketing</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>Cold Email Marketing Deliverability - Haseeb Gilani</image:title>
+      <image:caption>Technical inbox deliverability architecture and cold email marketing by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/services/appointment-setting</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>B2B Appointment Setting Services - Haseeb Gilani</image:title>
+      <image:caption>Qualified sales discovery meeting scheduling and prospect qualification by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/services/ecommerce-growth</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>Shopify &amp; E-Commerce Operations - Haseeb Gilani</image:title>
+      <image:caption>Shopify store management and wholesale buyer acquisition by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/insights/b2b-prospecting-workflow</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>The 4-Step B2B Outbound Prospecting Workflow Guide</image:title>
+      <image:caption>Tactical outbound prospecting methodology authored by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/insights/cold-email-deliverability</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>Cold Email Deliverability Architecture Guide</image:title>
+      <image:caption>Technical DNS hardening and domain warm-up playbook authored by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://haseeb-gilani-portfolio.vercel.app/faq</loc>
+    <image:image>
+      <image:loc>https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png</image:loc>
+      <image:title>B2B Lead Generation Knowledge Hub FAQ</image:title>
+      <image:caption>Executive questions and answers on lead generation and sales pipelines by Haseeb Gilani.</image:caption>
+    </image:image>
   </url>
 </urlset>

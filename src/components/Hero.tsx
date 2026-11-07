@@ -157,12 +157,20 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWorld, onConnect }) => {
 
                 {/* Inner Image Container */}
                 <div className="relative rounded-2xl overflow-hidden bg-[#17191C] aspect-square group">
-                  <img
-                    src={PERSONAL_INFO.photoUrl}
-                    alt="Haseeb Gilani - Business Development Manager & B2B Lead Generation Specialist"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-103"
-                    referrerPolicy="no-referrer"
-                  />
+                  <picture>
+                    <source srcSet={PERSONAL_INFO.photoUrl} type="image/webp" />
+                    <source srcSet={PERSONAL_INFO.photoFallbackUrl} type="image/png" />
+                    <img
+                      src={PERSONAL_INFO.photoFallbackUrl}
+                      alt="Haseeb Gilani (alternate spelling Haseeb Gillani) - Business Development Manager & B2B Lead Generation Specialist in Lahore, Pakistan"
+                      width={600}
+                      height={600}
+                      loading="eager"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-103"
+                      referrerPolicy="no-referrer"
+                    />
+                  </picture>
 
                   {/* Cyber Laser Scanner Line sweeping continuously */}
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-transparent via-[#FF4B32]/25 to-transparent animate-scanline pointer-events-none" />

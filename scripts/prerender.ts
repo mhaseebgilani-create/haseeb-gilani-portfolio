@@ -69,7 +69,7 @@ function renderFooter(): string {
     <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px;">
       <div>
         <h4 style="color: #F4F4F2; font-size: 15px; margin: 0 0 12px 0; font-weight: 700;">Haseeb Gilani</h4>
-        <p style="line-height: 1.6; margin: 0 0 12px 0;">B2B Lead Generation Specialist &amp; Business Development Manager based in Lahore, Pakistan. Helping global B2B firms generate qualified leads and fill sales pipelines.</p>
+        <p style="line-height: 1.6; margin: 0 0 12px 0;">B2B Lead Generation Specialist &amp; Business Development Manager based in Lahore, Pakistan (also known as Haseeb Gillani). Helping global B2B firms generate qualified leads and fill sales pipelines.</p>
         <p style="margin: 0; color: #FF4B32;">Direct: <a href="mailto:mhaseebgilani@gmail.com" style="color: #FF4B32;">mhaseebgilani@gmail.com</a></p>
       </div>
       <div>
@@ -84,12 +84,14 @@ function renderFooter(): string {
         </ul>
       </div>
       <div>
-        <h4 style="color: #F4F4F2; font-size: 14px; margin: 0 0 12px 0; font-weight: 700;">Knowledge &amp; Resources</h4>
+        <h4 style="color: #F4F4F2; font-size: 14px; margin: 0 0 12px 0; font-weight: 700;">Knowledge &amp; Social Profiles</h4>
         <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
           <li><a href="/insights/b2b-prospecting-workflow" style="color: #929DA7; text-decoration: none;">B2B Prospecting Workflow Guide</a></li>
           <li><a href="/insights/cold-email-deliverability" style="color: #929DA7; text-decoration: none;">Cold Email Deliverability Guide</a></li>
           <li><a href="/faq" style="color: #929DA7; text-decoration: none;">Frequently Asked Questions</a></li>
           <li><a href="https://www.linkedin.com/in/haseeb-gilani-4740a0381/" target="_blank" rel="noopener noreferrer" style="color: #929DA7; text-decoration: none;">LinkedIn Profile</a></li>
+          <li><a href="https://www.instagram.com/haseebgilani09/" target="_blank" rel="noopener noreferrer" style="color: #929DA7; text-decoration: none;">Instagram (@haseebgilani09)</a></li>
+          <li><a href="https://www.facebook.com/haseeb.gilani.10" target="_blank" rel="noopener noreferrer" style="color: #929DA7; text-decoration: none;">Facebook Profile</a></li>
           <li><a href="https://calendly.com/mhaseebgilani/30min" target="_blank" rel="noopener noreferrer" style="color: #929DA7; text-decoration: none;">Book a 30-Min Strategy Call</a></li>
         </ul>
       </div>
@@ -124,7 +126,7 @@ routesToPrerender.push({
   ],
   canonicalUrl: 'https://haseeb-gilani-portfolio.vercel.app/',
   ogType: 'website',
-  ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png',
+  ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png',
   schemaJson: {
     "@context": "https://schema.org",
     "@graph": [
@@ -133,10 +135,13 @@ routesToPrerender.push({
         "@id": "https://haseeb-gilani-portfolio.vercel.app/#profilepage",
         "url": "https://haseeb-gilani-portfolio.vercel.app/",
         "name": "Haseeb Gilani | Business Development & B2B Lead Generation Specialist",
-        "description": "Professional personal brand website of Haseeb Gilani, specializing in B2B lead generation, sales pipeline development, LinkedIn outreach, and digital growth in Lahore, Pakistan.",
+        "description": "Professional personal brand website of Haseeb Gilani (alternate spelling Haseeb Gillani), specializing in B2B lead generation, sales pipeline development, LinkedIn outreach, and digital growth in Lahore, Pakistan.",
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png"
+          "url": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
+          "caption": "Haseeb Gilani - Business Development Manager & B2B Lead Generation Specialist",
+          "width": 1000,
+          "height": 1000
         },
         "mainEntity": {
           "@id": "https://haseeb-gilani-portfolio.vercel.app/#person"
@@ -146,9 +151,18 @@ routesToPrerender.push({
         "@type": "Person",
         "@id": "https://haseeb-gilani-portfolio.vercel.app/#person",
         "name": "Haseeb Gilani",
+        "alternateName": "Haseeb Gillani",
         "jobTitle": "Business Development Manager & B2B Lead Generation Specialist",
         "url": "https://haseeb-gilani-portfolio.vercel.app/",
-        "image": "https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://haseeb-gilani-portfolio.vercel.app/#primaryimage",
+          "url": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
+          "contentUrl": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
+          "caption": "Haseeb Gilani (Haseeb Gillani) - Business Development Manager and B2B Lead Generation Specialist",
+          "width": 1000,
+          "height": 1000
+        },
         "email": "mhaseebgilani@gmail.com",
         "address": {
           "@type": "PostalAddress",
@@ -162,6 +176,8 @@ routesToPrerender.push({
         },
         "sameAs": [
           "https://www.linkedin.com/in/haseeb-gilani-4740a0381/",
+          "https://www.instagram.com/haseebgilani09/",
+          "https://www.facebook.com/haseeb.gilani.10",
           "https://calendly.com/mhaseebgilani/30min",
           "https://haseeb-gilani-portfolio.vercel.app/"
         ],
@@ -318,8 +334,10 @@ DEDICATED_SERVICES.forEach(service => {
         "provider": {
           "@type": "Person",
           "name": "Haseeb Gilani",
+          "alternateName": "Haseeb Gillani",
           "url": "https://haseeb-gilani-portfolio.vercel.app/",
           "jobTitle": "Business Development Manager & B2B Lead Generation Specialist",
+          "image": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lahore",
@@ -328,6 +346,8 @@ DEDICATED_SERVICES.forEach(service => {
           },
           "sameAs": [
             "https://www.linkedin.com/in/haseeb-gilani-4740a0381/",
+            "https://www.instagram.com/haseebgilani09/",
+            "https://www.facebook.com/haseeb.gilani.10",
             "https://calendly.com/mhaseebgilani/30min"
           ]
         },
@@ -384,7 +404,7 @@ DEDICATED_SERVICES.forEach(service => {
     keywords: service.keywords,
     canonicalUrl: service.canonicalUrl,
     ogType: 'website',
-    ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png',
+    ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png',
     schemaJson: serviceSchema,
     bodyHtml: `
       ${renderHeader()}
@@ -485,21 +505,27 @@ INSIGHT_ARTICLES.forEach(article => {
         "author": {
           "@type": "Person",
           "name": "Haseeb Gilani",
+          "alternateName": "Haseeb Gillani",
           "url": "https://haseeb-gilani-portfolio.vercel.app/",
           "jobTitle": "Business Development Manager & B2B Lead Generation Specialist",
+          "image": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lahore",
             "addressCountry": "Pakistan"
           },
           "sameAs": [
-            "https://www.linkedin.com/in/haseeb-gilani-4740a0381/"
+            "https://www.linkedin.com/in/haseeb-gilani-4740a0381/",
+            "https://www.instagram.com/haseebgilani09/",
+            "https://www.facebook.com/haseeb.gilani.10"
           ]
         },
         "publisher": {
           "@type": "Person",
           "name": "Haseeb Gilani",
-          "url": "https://haseeb-gilani-portfolio.vercel.app/"
+          "alternateName": "Haseeb Gillani",
+          "url": "https://haseeb-gilani-portfolio.vercel.app/",
+          "image": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -532,7 +558,7 @@ INSIGHT_ARTICLES.forEach(article => {
     keywords: article.keywords,
     canonicalUrl: article.canonicalUrl,
     ogType: 'article',
-    ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png',
+    ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png',
     schemaJson: articleSchema,
     bodyHtml: `
       ${renderHeader()}
@@ -656,7 +682,7 @@ routesToPrerender.push({
   ],
   canonicalUrl: 'https://haseeb-gilani-portfolio.vercel.app/faq',
   ogType: 'website',
-  ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png',
+  ogImage: 'https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png',
   schemaJson: faqSchema,
   bodyHtml: `
     ${renderHeader()}

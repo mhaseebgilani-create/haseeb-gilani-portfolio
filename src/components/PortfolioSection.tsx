@@ -75,9 +75,12 @@ export const PortfolioSection: React.FC = () => {
                 <div className="relative h-44 w-full overflow-hidden">
                   <img
                     src={project.imageUrl || "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80"}
-                    alt={project.title}
+                    alt={`${project.title} - ${project.clientIndustry} Case Study by Haseeb Gilani`}
+                    width={900}
+                    height={450}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
                     loading="lazy"
+                    decoding="async"
                   />
                   {/* Dark Charcoal gradient scrim */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#17191C] via-[#17191C]/75 to-[#17191C]/35" />
@@ -167,8 +170,12 @@ export const PortfolioSection: React.FC = () => {
             <div className="relative h-48 sm:h-56 w-full overflow-hidden border-b border-[#929DA7]/20">
               <img
                 src={activeModalCase.imageUrl || "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"}
-                alt={activeModalCase.title}
+                alt={`${activeModalCase.title} - Full B2B Lead Generation Case Study by Haseeb Gilani (Haseeb Gillani)`}
+                width={1200}
+                height={600}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#17191C] via-[#17191C]/60 to-transparent" />
               

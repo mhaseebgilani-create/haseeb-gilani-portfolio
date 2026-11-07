@@ -198,11 +198,17 @@ export const AiVoiceAssistant: React.FC<AiVoiceAssistantProps> = ({ onExploreWor
           <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#929DA7]/15 text-[10px] font-mono tracking-wider">
             <div className="flex items-center gap-2 text-[#FF4B32]">
               <div className="w-5 h-5 rounded-full overflow-hidden border border-[#FF4B32]/70 shrink-0">
-                <img
-                  src="/assets/aistudio/Gemini_Generated_Image_ppyvtvppyvtvppyv_5b4c8ceb.jpg"
-                  alt="AI Guide"
-                  className="w-full h-full object-cover"
-                />
+                <picture>
+                  <source srcSet="/assets/images/haseeb-gilani-ai-guide-avatar.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/haseeb-gilani-ai-guide-avatar.jpg"
+                    alt="AI Guide Virtual Assistant Avatar for Haseeb Gilani"
+                    width={20}
+                    height={20}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </picture>
               </div>
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF4B32] animate-ping" />
               <span className="font-bold uppercase">AI GUIDE // ONLINE</span>
@@ -331,13 +337,19 @@ export const AiVoiceAssistant: React.FC<AiVoiceAssistantProps> = ({ onExploreWor
 
           {/* Avatar Face Container with uploaded character image */}
           <div className="relative w-15 h-15 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-gradient-to-b from-[#2A2E35] to-[#121417] flex items-center justify-center border border-[#929DA7]/30 shadow-inner">
-            <img
-              src="/assets/aistudio/Gemini_Generated_Image_ppyvtvppyvtvppyv_5b4c8ceb.jpg"
-              alt="AI Voice Guide - Haseeb Gilani Portfolio Assistant"
-              className={`w-full h-full object-cover object-center transition-transform duration-500 ${
-                isPlaying ? 'scale-108' : 'group-hover:scale-105'
-              }`}
-            />
+            <picture className="w-full h-full">
+              <source srcSet="/assets/images/haseeb-gilani-ai-guide-avatar.webp" type="image/webp" />
+              <img
+                src="/assets/images/haseeb-gilani-ai-guide-avatar.jpg"
+                alt="AI Voice Guide Virtual Assistant Avatar for Haseeb Gilani"
+                width={64}
+                height={64}
+                loading="lazy"
+                className={`w-full h-full object-cover object-center transition-transform duration-500 ${
+                  isPlaying ? 'scale-108' : 'group-hover:scale-105'
+                }`}
+              />
+            </picture>
 
             {/* Subtle Futuristic Scanline */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF4B32]/15 to-transparent animate-scanline pointer-events-none" />

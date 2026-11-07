@@ -63,20 +63,28 @@ export const InsightArticlePage: React.FC<InsightArticlePageProps> = ({
         "author": {
           "@type": "Person",
           "name": "Haseeb Gilani",
+          "alternateName": "Haseeb Gillani",
           "url": "https://haseeb-gilani-portfolio.vercel.app/",
           "jobTitle": "Business Development Manager & B2B Lead Generation Specialist",
+          "image": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lahore",
             "addressCountry": "Pakistan"
           },
           "sameAs": [
-            "https://www.linkedin.com/in/haseeb-gilani-4740a0381/"
+            "https://www.linkedin.com/in/haseeb-gilani-4740a0381/",
+            "https://www.instagram.com/haseebgilani09/",
+            "https://www.facebook.com/haseeb.gilani.10",
+            "https://calendly.com/mhaseebgilani/30min",
+            "https://haseeb-gilani-portfolio.vercel.app/"
           ]
         },
         "publisher": {
           "@type": "Person",
-          "name": "Haseeb Gilani"
+          "name": "Haseeb Gilani",
+          "alternateName": "Haseeb Gillani",
+          "url": "https://haseeb-gilani-portfolio.vercel.app/"
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -148,7 +156,10 @@ export const InsightArticlePage: React.FC<InsightArticlePageProps> = ({
               <div className="w-11 h-11 rounded-full overflow-hidden border border-[#FF4B32]/50 shrink-0">
                 <img
                   src={PERSONAL_INFO.photoUrl}
-                  alt="Haseeb Gilani"
+                  alt="Haseeb Gilani (alternate spelling Haseeb Gillani) - Business Development & Lead Generation Author"
+                  width={44}
+                  height={44}
+                  loading="lazy"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -228,7 +239,10 @@ export const InsightArticlePage: React.FC<InsightArticlePageProps> = ({
             <div className="w-16 h-16 rounded-2xl overflow-hidden border border-[#929DA7]/30 shrink-0">
               <img
                 src={PERSONAL_INFO.photoUrl}
-                alt="Haseeb Gilani"
+                alt="Haseeb Gilani (Haseeb Gillani) - Author Profile & B2B Strategist in Lahore, Pakistan"
+                width={64}
+                height={64}
+                loading="lazy"
                 className="w-full h-full object-cover object-top"
               />
             </div>

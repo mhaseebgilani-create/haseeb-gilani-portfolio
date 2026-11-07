@@ -66,8 +66,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         "provider": {
           "@type": "Person",
           "name": "Haseeb Gilani",
+          "alternateName": "Haseeb Gillani",
           "url": "https://haseeb-gilani-portfolio.vercel.app/",
           "jobTitle": "Business Development Manager & B2B Lead Generation Specialist",
+          "image": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Lahore",
@@ -76,7 +78,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           },
           "sameAs": [
             "https://www.linkedin.com/in/haseeb-gilani-4740a0381/",
-            "https://calendly.com/mhaseebgilani/30min"
+            "https://www.instagram.com/haseebgilani09/",
+            "https://www.facebook.com/haseeb.gilani.10",
+            "https://calendly.com/mhaseebgilani/30min",
+            "https://haseeb-gilani-portfolio.vercel.app/"
           ]
         },
         "areaServed": [

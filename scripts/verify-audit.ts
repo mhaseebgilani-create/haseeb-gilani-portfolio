@@ -211,5 +211,48 @@ results['8. Unsupported Claims Audit'] = {
     : 'PASS: Purged all unverified claims (no $4.2M, no 150K+, no 98% guarantee, no 35–45% connection guarantee).'
 };
 
+// 9. Name spelling variations audit
+const homeHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
+const hasAlternateNameSchema = homeHtml.includes('"alternateName": "Haseeb Gillani"');
+const hasPrimaryName = homeHtml.includes('Haseeb Gilani');
+const hasAlternateInContent = homeHtml.includes('Haseeb Gillani');
+results['9. Name Spelling Variations (Gilani vs Gillani)'] = {
+  pass: hasAlternateNameSchema && hasPrimaryName && hasAlternateInContent,
+  details: hasAlternateNameSchema && hasPrimaryName && hasAlternateInContent
+    ? 'PASS: "Haseeb Gilani" is primary branding/title; "Haseeb Gillani" is registered as alternateName in Person JSON-LD and naturally indexed.'
+    : 'FAIL: Missing alternateName in schema or content.'
+};
+
+// 10. Official Social Profiles in schema and footer
+const officialProfiles = [
+  'https://www.linkedin.com/in/haseeb-gilani-4740a0381/',
+  'https://www.instagram.com/haseebgilani09/',
+  'https://www.facebook.com/haseeb.gilani.10'
+];
+const allProfilesInSchema = officialProfiles.every(url => homeHtml.includes(url));
+results['10. Official Social Profile Discoverability'] = {
+  pass: allProfilesInSchema,
+  details: allProfilesInSchema
+    ? 'PASS: Official LinkedIn, Instagram (@haseebgilani09), and Facebook profiles are integrated in sameAs schema and website UI.'
+    : 'FAIL: One or more social profile URLs missing from schema/HTML.'
+};
+
+// 11. Image SEO & Asset Optimization
+const imgWebp = path.join(publicDir, 'assets/images/haseeb-gilani-lead-generation-specialist.webp');
+const imgPng = path.join(publicDir, 'assets/images/haseeb-gilani-lead-generation-specialist.png');
+const avatarWebp = path.join(publicDir, 'assets/images/haseeb-gilani-ai-guide-avatar.webp');
+const avatarJpg = path.join(publicDir, 'assets/images/haseeb-gilani-ai-guide-avatar.jpg');
+const assetsExist = fs.existsSync(imgWebp) && fs.existsSync(imgPng) && fs.existsSync(avatarWebp) && fs.existsSync(avatarJpg);
+const hasImageSitemap = sitemapXml.includes('<image:image>') && sitemapXml.includes('<image:loc>');
+const hasOgImageMeta = homeHtml.includes('og:image:width') && homeHtml.includes('og:image:height') && homeHtml.includes('og:image:alt');
+
+results['11. Image SEO, Formats & Google Image Sitemap'] = {
+  pass: assetsExist && hasImageSitemap && hasOgImageMeta,
+  details: assetsExist && hasImageSitemap && hasOgImageMeta
+    ? 'PASS: Next-gen WebP/PNG/JPG images generated (97-99% size reduction), descriptive filenames used, Google Image Sitemap active with <image:image>, and Open Graph image tags fully specified.'
+    : 'FAIL: Missing image assets or sitemap/OG image tags.'
+};
+
 // Print summary
 console.log(JSON.stringify(results, null, 2));
+

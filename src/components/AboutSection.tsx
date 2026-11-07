@@ -68,13 +68,22 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenCalendly }) =>
             {/* Portrait Frame with Brushed Steel Accent */}
             <div className="relative rounded-3xl p-2.5 bg-[#1F2328] border border-[#929DA7]/25 shadow-2xl overflow-hidden group">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#17191C] relative">
-                <img
-                  src={PERSONAL_INFO.photoUrl}
-                  alt="Haseeb Gilani - Lahore, Pakistan"
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-102"
-                  referrerPolicy="no-referrer"
-                />
+                <picture>
+                  <source srcSet={PERSONAL_INFO.photoUrl} type="image/webp" />
+                  <source srcSet={PERSONAL_INFO.photoFallbackUrl} type="image/png" />
+                  <img
+                    src={PERSONAL_INFO.photoFallbackUrl}
+                    alt="Haseeb Gilani (alternate spelling Haseeb Gillani) - Business Development & Client Acquisition Specialist based in Lahore, Pakistan"
+                    width={500}
+                    height={625}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-102"
+                    referrerPolicy="no-referrer"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#17191C] via-[#17191C]/20 to-transparent pointer-events-none" />
+              </div>
                 
                 {/* Embedded Badge with BrandLogo Emblem */}
                 <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl glass-panel-elevated border border-[#929DA7]/20 flex items-center justify-between gap-3">
@@ -93,7 +102,6 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenCalendly }) =>
                   <BrandLogo size={32} />
                 </div>
               </div>
-            </div>
 
             {/* Quote Card (From Page 2 of Portfolio) */}
             <div className="p-6 rounded-2xl glass-panel-elevated border border-[#FF4B32]/35 space-y-2">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Mail, MapPin, FileText, Download, ChevronRight } from 'lucide-react';
+import { ArrowUp, Mail, MapPin, FileText, Download, ChevronRight, Instagram, Facebook } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { RealLinkedInIcon, RealCalendlyIcon } from './RealBrandIcons';
 import { BrandLogo } from './BrandLogo';
@@ -153,18 +153,43 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCalendly }) =>
                   className="flex-1 py-2 px-3 rounded-xl bg-[#1F2328] hover:bg-[#2A2E35] border border-[#929DA7]/20 text-[#929DA7] hover:text-[#F4F4F2] text-xs font-mono flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <Mail className="w-3.5 h-3.5 text-[#FF4B32]" />
-                  <span>Email Directly</span>
+                  <span>Email</span>
                 </a>
 
-                <a
-                  href={PERSONAL_INFO.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-xl bg-[#0A66C2] hover:bg-[#084e96] text-white transition-colors flex items-center justify-center"
-                  aria-label="LinkedIn profile"
-                >
-                  <RealLinkedInIcon className="w-4 h-4" />
-                </a>
+                <div className="flex items-center gap-1.5">
+                  <a
+                    href={PERSONAL_INFO.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-[#0A66C2] hover:bg-[#084e96] text-white transition-colors flex items-center justify-center shadow-xs"
+                    aria-label="Haseeb Gilani LinkedIn Profile"
+                    title="Haseeb Gilani on LinkedIn"
+                  >
+                    <RealLinkedInIcon className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href={PERSONAL_INFO.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] hover:opacity-90 text-white transition-opacity flex items-center justify-center shadow-xs"
+                    aria-label="Haseeb Gilani Instagram Profile"
+                    title="Haseeb Gilani on Instagram (@haseebgilani09)"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+
+                  <a
+                    href={PERSONAL_INFO.facebookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-[#1877F2] hover:bg-[#1464cc] text-white transition-colors flex items-center justify-center shadow-xs"
+                    aria-label="Haseeb Gilani Facebook Profile"
+                    title="Haseeb Gilani on Facebook"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
 
               {/* PDF Download */}

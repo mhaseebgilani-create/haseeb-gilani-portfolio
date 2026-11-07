@@ -28,7 +28,12 @@ const HOME_PAGE_SCHEMA = {
       "description": "Professional personal brand website of Haseeb Gilani, specializing in B2B lead generation, sales pipeline development, LinkedIn outreach, and digital growth in Lahore, Pakistan.",
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png"
+        "@id": "https://haseeb-gilani-portfolio.vercel.app/#primaryimage",
+        "url": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
+        "contentUrl": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
+        "caption": "Haseeb Gilani (Haseeb Gillani) - Business Development Manager & B2B Lead Generation Specialist in Lahore, Pakistan",
+        "width": 1000,
+        "height": 1000
       },
       "mainEntity": {
         "@id": "https://haseeb-gilani-portfolio.vercel.app/#person"
@@ -38,9 +43,18 @@ const HOME_PAGE_SCHEMA = {
       "@type": "Person",
       "@id": "https://haseeb-gilani-portfolio.vercel.app/#person",
       "name": "Haseeb Gilani",
+      "alternateName": "Haseeb Gillani",
       "jobTitle": "Business Development Manager & B2B Lead Generation Specialist",
       "url": "https://haseeb-gilani-portfolio.vercel.app/",
-      "image": "https://haseeb-gilani-portfolio.vercel.app/assets/aistudio/83b244ff-b3aa-4b1e-a5fd-a2257121c9c8_e7e26134.png",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://haseeb-gilani-portfolio.vercel.app/#primaryimage",
+        "url": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
+        "contentUrl": "https://haseeb-gilani-portfolio.vercel.app/assets/images/haseeb-gilani-lead-generation-specialist.png",
+        "caption": "Haseeb Gilani (alternate spelling Haseeb Gillani) - Business Development Manager and B2B Lead Generation Specialist in Lahore, Pakistan",
+        "width": 1000,
+        "height": 1000
+      },
       "email": "mhaseebgilani@gmail.com",
       "telephone": "+923000000000",
       "address": {
@@ -55,6 +69,8 @@ const HOME_PAGE_SCHEMA = {
       },
       "sameAs": [
         "https://www.linkedin.com/in/haseeb-gilani-4740a0381/",
+        "https://www.instagram.com/haseebgilani09/",
+        "https://www.facebook.com/haseeb.gilani.10",
         "https://calendly.com/mhaseebgilani/30min",
         "https://haseeb-gilani-portfolio.vercel.app/"
       ],
@@ -80,10 +96,14 @@ const HOME_PAGE_SCHEMA = {
 const HOME_KEYWORDS = [
   "Haseeb",
   "Haseeb Gilani",
+  "Haseeb Gillani",
   "Haseeb Gilani Lahore",
+  "Haseeb Gillani Lahore",
   "Haseeb Gilani Pakistan",
+  "Haseeb Gillani Pakistan",
   "Haseeb Business Development",
   "Haseeb Lead Generation",
+  "Haseeb Gillani Lead Generation",
   "Haseeb LinkedIn",
   "Haseeb Portfolio",
   "Haseeb Gilani Contact",

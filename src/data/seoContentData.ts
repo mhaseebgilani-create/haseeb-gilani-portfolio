@@ -838,14 +838,19 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     categoryDesc: "Engagement models, communication, Upwork contracts, and retainer details.",
     items: [
       {
+        question: "Is Haseeb Gilani also spelled or known as Haseeb Gillani?",
+        answer: "Yes. Haseeb Gilani (frequently written with the alternate spelling Haseeb Gillani) is the same Business Development Manager and B2B Lead Generation Specialist based in Lahore, Pakistan. Both name spellings refer to the same professional identity and verified outbound sales consultancy.",
+        schemaKeyword: "Haseeb Gillani Alternate Name"
+      },
+      {
         question: "Where is Haseeb Gilani located, and how do we communicate?",
         answer: "I am based in Lahore, Punjab, Pakistan, and work seamlessly with clients across the US, UK, Canada, and Europe. Communication is conducted via Slack, WhatsApp, Google Meet, Zoom, and email, with strict alignment to your primary business hours.",
         schemaKeyword: "Haseeb Gilani Location"
       },
       {
-        question: "How can I hire Haseeb Gilani or start a project?",
-        answer: "You can book a direct 30-minute discovery call on Calendly (https://calendly.com/mhaseebgilani/30min), reach out via email at mhaseebgilani@gmail.com, connect on LinkedIn (https://www.linkedin.com/in/haseeb-gilani-4740a0381/), or initiate a project milestone through Upwork.",
-        schemaKeyword: "Haseeb Gilani Contact"
+        question: "How can I hire Haseeb Gilani or connect across his official profiles?",
+        answer: "You can book a direct 30-minute discovery call on Calendly (https://calendly.com/mhaseebgilani/30min), email directly at mhaseebgilani@gmail.com, or connect across his official verified profiles on LinkedIn (https://www.linkedin.com/in/haseeb-gilani-4740a0381/), Instagram (https://www.instagram.com/haseebgilani09/), and Facebook (https://www.facebook.com/haseeb.gilani.10).",
+        schemaKeyword: "Haseeb Gilani Contact & Social Profiles"
       }
     ]
   }

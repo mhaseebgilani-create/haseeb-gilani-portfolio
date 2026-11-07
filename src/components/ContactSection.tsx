@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, Check, Copy, ArrowUpRight, MessageSquare, Clock, FileText, Download } from 'lucide-react';
+import { Mail, MapPin, Send, Check, Copy, ArrowUpRight, MessageSquare, Clock, FileText, Download, Instagram, Facebook } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { RealLinkedInIcon, RealCalendlyIcon, RealWhatsAppIcon } from './RealBrandIcons';
 
@@ -180,6 +180,54 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService =
                   className="px-3 py-1.5 rounded-lg bg-[#0A66C2] hover:bg-[#084e96] text-xs font-mono text-white transition-colors flex items-center gap-1 shadow-md shadow-[#0A66C2]/20"
                 >
                   <span>Connect</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </div>
+
+              {/* Official Instagram Profile */}
+              <div className="p-3.5 rounded-2xl bg-[#1F2328] border border-[#929DA7]/15 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] flex items-center justify-center text-white">
+                    <Instagram className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-mono text-[#929DA7] uppercase">Official Instagram</div>
+                    <div className="text-xs sm:text-sm font-semibold text-[#F4F4F2]">
+                      @haseebgilani09
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href={PERSONAL_INFO.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-[#2A2E35] hover:bg-[#353A43] text-xs font-mono text-white transition-colors flex items-center gap-1 border border-white/10"
+                >
+                  <span>Follow</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </div>
+
+              {/* Official Facebook Profile */}
+              <div className="p-3.5 rounded-2xl bg-[#1F2328] border border-[#929DA7]/15 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-[#1877F2] flex items-center justify-center text-white">
+                    <Facebook className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-mono text-[#929DA7] uppercase">Official Facebook</div>
+                    <div className="text-xs sm:text-sm font-semibold text-[#F4F4F2]">
+                      Haseeb Gilani
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href={PERSONAL_INFO.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-[#2A2E35] hover:bg-[#353A43] text-xs font-mono text-white transition-colors flex items-center gap-1 border border-white/10"
+                >
+                  <span>View</span>
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
               </div>
